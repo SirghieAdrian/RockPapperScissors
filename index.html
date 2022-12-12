@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rock-Papper-Scissors</title>
+  </head>
+<body>
+  <script>
+    const ComputerChoices=["rock","papper","scissors"];
+    function winner(firstChoice,secondChoice){
+        if(firstChoice=="rock"){
+            if(secondChoice=="rock"){
+                return '=';
+            }else if(secondChoice=="papper"){
+                return 'l';
+            }else if(secondChoice=="scissors"){
+                return 'w';
+            }
+        }else if(firstChoice=="papper"){
+            if(secondChoice=="rock"){
+                return 'w';
+            }else if(secondChoice=="papper"){
+                return '=';
+            }else if(secondChoice=="scissors"){
+                return 'l';
+            }
+        }else if(firstChoice=="scissors"){
+            if(secondChoice=="rock"){
+                return 'l';
+            }else if(secondChoice=="papper"){
+                return 'w';
+            }else if(secondChoice=="scissors"){
+                return '=';
+            }
+        }
+    }
+    function getComputerChoice(){
+        let computerSelection=Math.floor(Math.random()*ComputerChoices.length);
+        return ComputerChoices[computerSelection];
+    }
+    function playRound(palyerSelection,computerSelection){
+        if(winner(palyerSelection,computerSelection)=="="){
+            console.log("It's a tie!");
+            return 0;
+        }
+            if(winner(palyerSelection,computerSelection)=="w"){
+            console.log("You won!");
+            return 1;
+        }
+            if(winner(palyerSelection,computerSelection)=="l"){
+            console.log("You lost!");
+            return 2;
+        }
+    }
+    function game(){
+        let scorePlayer=0;
+        let scoreComputer=0;
+        for(let i=0;i<5;i++){
+            let palyerSelection=prompt("Rock,Papper or Scissors: ").toLowerCase();
+            let computerSelection=getComputerChoice();
+            let score=playRound(palyerSelection,computerSelection);
+            if(score==1)
+                scorePlayer++;
+            else if(score==2)
+                scoreComputer++;
+        }
+        if(scorePlayer>scoreComputer)
+            alert("PLAYER WON");
+        else if(scorePlayer<scoreComputer)
+            alert("COMPUTER WON");
+        else
+            alert("IT'S A TIE!");
+    }
+    game();
+  </script>
+</body>
+</html>
