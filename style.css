@@ -1,0 +1,31 @@
+body{
+    font-family: 'Blackboard', sans-serif;
+    background-color:rgba(255, 255, 255, 0.838);
+}
+#buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:solid rgb(58, 35, 1) 20px;
+    background-color: rgb(6, 20, 1);
+}
+.mainText,h,p{
+    color:rgba(255, 255, 255, 0.838);
+    font-size: 100px;
+}
+h,p{
+    margin:0px;
+}
+.rock,.papper,.scissors{
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    margin: 50px;
+    font-family: 'Blackboard', sans-serif;
+    font-size: 50px;
+    background-color: rgba(255, 255, 255, 0.838);
+}
